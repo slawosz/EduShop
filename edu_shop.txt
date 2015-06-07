@@ -1,0 +1,7 @@
+rails generate scaffold Product name:string description:text category_id:integer price:decimal &&
+rails generate scaffold Category name:string description:text &&
+rails generate scaffold Cart user_id:integer order_id:integer &&
+rails generate scaffold CartProduct cart_id:integer product_id:integer amount:integer source:string &&
+rails generate scaffold User name:string &&
+rails generate scaffold Order user_id:interger cart_id:integer &&
+rails generate scaffold OrderProduct product_id:integer order_id:integer amount:integer price:decimal
