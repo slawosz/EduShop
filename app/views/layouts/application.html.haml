@@ -1,0 +1,192 @@
+!!!
+%html
+  %head
+    %title
+      EduShop
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css", :rel => "stylesheet"}
+      %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"}
+      = csrf_meta_tags
+      = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+      = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+  %body.padding-re
+
+    %nav.navbar.navbar-inverse.navbar-fixed-top
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle.collapsed{"data-toggle" => "collapse", "data-target" => "#bs-example-navbar-collapse-1", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"} Brand
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+          %ul.nav.navbar-nav
+            %li.active 
+              %a{:href => "#"} 
+                Link 
+                %span.sr-only 
+                current
+            %li
+              %span.sr-only current
+            %li
+              %a{:href => "#"} Link
+            %li.dropdown
+              %a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown", :role => "button", "aria-expanded" => "false"} 
+                Dropdown
+                %span.caret
+              %ul.dropdown-menu{:role => "menu"}
+                %li
+                  %a{:href => "#"}Action
+                %li
+                  %a{:href => "#"}Another Action
+                %li
+                  %a{:href => "#"}Sth else
+                %li.divider
+                %li
+                  %a{:href => "#"}Separated link
+                %li.divider
+                %li
+                  %a{:href => "#"}One more separated link      
+
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{:href => "#"}Link
+            %li.dropdown
+              %a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown", :role => "button", "aria-expanded" => "false"}    
+                Dropdown 
+                %span.caret
+              %ul.dropdown-menu{:role => "menu"}
+                %li
+                  %a{:href => "#"}Action
+                %li
+                  %a{:href => "#"} another Action
+                %li
+                  %a{:href => "#"} someAction
+                li.divider
+                %li
+                  %a{:href => "#"} separated link  
+
+    .container
+      .row.well
+        .col-md-12
+          %nav.navbar.navbar-default
+            .container-fluid
+              .navbar-header
+                %button.navbar-toggle.collapsed{:type => "button", "data-toggle" => "collapse", "data-target" => "#bs-example-navbar-collapse-1"}
+                  %span.sr-only Toggle navigation
+                  %span.icon-bar
+                  %span.icon-bar
+                  %span.icon-bar
+                %a.navbar-brand{:href => "#"} 
+                  %i.glyphicon.glyphicon-grain
+                    Digitec
+
+              .collapse.navbar-collapse#bs-example-navbar-collapse-1
+                %ul.nav.navbar-nav
+                  %li.active
+                    %a{:href => "#"}
+                      Link 
+                      %span.sr-only (current)
+                  %li
+                    %a{:href => "#"} Link
+              
+                %form.navbar-form.navbar-left{:role => "search"}
+                  .form-group
+                    %input.form-control.search-box{:type => "text", :placeholder => "Search", :size => 70}
+                  %button.btn.btn-default{:type => "submit"} Submit   
+                %ul.nav.navbar-nav.navbar-right
+                  %li
+                    %a{:href => "#"} Link
+
+
+
+      .row
+        .col-md-2.well.well-sm
+          %ul.nav.nav-pills.nav-stacked
+            %li.active{:role => "presentation"} 
+              %a{:href => "#"} Home
+            %li{:role => "presentation"}
+              %a{:href => "#"} Profile
+            %li{:role => "presentation"}
+              %a{:href => "#"} Product
+            %li{:role => "presentation"}
+              %a{:href => "#"} Product
+            %li{:role => "presentation"}
+              %a{:href => "#"} Product
+          %ul.list-group
+            %li.list-group-item
+              Action
+            %li.list-group-item.disabled
+              Action
+            %li.list-group-item
+              Action
+
+        = yield
+
+      .row.even
+        .col-md-2.well.even-2
+          %h4 Contact
+          %address
+            %strong Twitter, Inc.
+            %br
+            795 Folsom Ave, Suite 600
+            %br
+            San Francisco, CA 94107
+            %br
+            %abbr{:title => "Phone"} P: (123) 456-7890
+
+          %address
+            %strong Full Name
+            %br
+            %a{:href => "mailto:#"} first.last@example.com
+
+        .col-md-2.well.even-2
+          %h4 Hilfe
+          %ul.list-unstyled
+            %li Cras justo sxsdefe
+            %li Cras justo odio
+            %li Cras justo odiodede dededed
+            %li Cras justo odio
+        .col-md-2.well.even-2
+          %h4 Uber uns
+          %ul.list-unstyled
+            %li Cras justo sxsdefe
+            %li Cras justo odio
+            %li Cras justo odiodede dededed
+            %li Cras justo odio
+            %li Cras justo odio
+            %li Cras justo odiodefer
+            %li Cras justo odiofrffvrfrf
+        .col-md-2.well.even-2
+          %h4 Stadorte
+          %ul.list-unstyled
+            %li Zurich
+            %li Basel
+            %li St Gallen
+            %li Lugano
+            %li Geneve
+            %li Lucerne
+            %li Bern
+            %li Zurich
+            %li Basel
+            %li St Gallen
+            %li Lugano
+            %li Geneve
+            %li Lucerne
+            %li Bern
+        .col-md-2.well.even-2
+          %h4 Social Media
+          %ul.list-unstyled
+            %li Twitter
+            %li Facebook
+            %li Lindkin
+            %li Google
+        .col-md-2.well.even-2
+          %h4 Jobs
+          %p 18.05.2015
+          %strong Product Manager Consultant
+          %u Stellenbeschriebt
+          %p 18.05.2015
+          %strong Product Manager Consultant
+          %u Stellenbeschriebt
