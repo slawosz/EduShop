@@ -4,7 +4,17 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    
+    # params[:category_id] means we picked a category
+    if params[:category_id]
+      @products = Product.where(category_id: params[:category_id])
+      @presented_products = Product.where(category_id: params[:category_id]).limit(5).map { |p| p.price.to_s } 
+      @page_has_slideshow = Category.find(params[:category_id]).has_slideshow
+    else # we are on main products page
+      @products = Product.all
+      @presented_products = Product.limit(5).map { |p| p.price.to_s }
+      @page_has_slideshow = true
+    end
   end
 
   # GET /products/1
@@ -66,6 +76,7 @@ class ProductsController < ApplicationController
     def set_product
       @product = Product.find(params[:id])
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
