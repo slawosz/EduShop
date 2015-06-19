@@ -4,7 +4,7 @@
 <% if @page_has_slideshow %>
   <ul>
     <% @presented_products.each do |elem| %>
-      <li><%= elem %></li>
+      <li><%= render partial: 'product', object: elem %></li>
     <% end %>
   </ul>
 <% end %>
