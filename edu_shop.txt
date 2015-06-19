@@ -5,3 +5,6 @@ rails generate scaffold CartProduct cart_id:integer product_id:integer amount:in
 rails generate scaffold User name:string &&
 rails generate scaffold Order user_id:interger cart_id:integer &&
 rails generate scaffold OrderProduct product_id:integer order_id:integer amount:integer price:decimal
+
+# later:
+rails generate migration add_has_slideshow_to_categories has_slideshow:boolean
