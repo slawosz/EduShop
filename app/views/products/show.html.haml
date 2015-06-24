@@ -1,3 +1,7 @@
-= render @product
--# self.render('product')
-= render 'ads'
+.col-md-7
+  = render @product
+  = render 'product_buttons'
+  -# self.render('product')
+  = render 'various_products'
+.col-md-3
+  = render 'ads'
