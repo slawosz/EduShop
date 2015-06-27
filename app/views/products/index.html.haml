@@ -1,0 +1,20 @@
+.col-md-7
+  %p#notice= notice 
+  %h1 Listing Products
+  - if @page_has_slideshow
+    %ul.list-unstyled
+      - @presented_products.each do |elem|
+        %li= render partial: 'product', object: elem
+
+  = render 'various_products'
+  %br
+  %br
+  %br
+  = render 'carousel'
+
+.col-md-3
+  = render 'ads'
+
+
+
+

@@ -1,4 +1,4 @@
-.col-md-7
+.row
   %nav.navbar.navbar-default
     .container-fluid
       .navbar-header
@@ -9,66 +9,41 @@
         %li{:role => "presentation"}
           %a{:href => "#"} Profile
 
-  .row
-    .col-md-6
-      .media
-        .media-left.picture
-          %a{:href => "#"}
-            %i.glyphicon.glyphicon-picture
-    .col-md-6
-      %ul.left-padd
-        %li.narrow
-          %a.with-padd{:href => "#"}
-            %i.glyphicon.glyphicon-star
-            %i.glyphicon.glyphicon-star
-            %i.glyphicon.glyphicon-star
-        %li.narrow
-          %a.with-padd{:href => "#"} Powerbank
-        %li.narrow
-          %a.with-padd{:href => "#"} Bestseller
-          %i.glyphicon.glyphicon-ok-circle
-        
-      .media
-        .media-body
-          %h4.media-heading.lead
-            = @product.name
-          %p
-            %strong Price:
-            = @product.price
-          %p
-            = @product.description
+.row
+  .col-md-6
+    .media
+      .media-left.picture
+        %a{:href => "#"}
+          %i.glyphicon.glyphicon-picture
+  .col-md-6
+    %ul.left-padd
+      %li.narrow
+        %a.with-padd{:href => "#"}
+          %i.glyphicon.glyphicon-star
+          %i.glyphicon.glyphicon-star
+          %i.glyphicon.glyphicon-star
+      %li.narrow
+        %a.with-padd{:href => "#"} Powerbank
+      %li.narrow
+        %a.with-padd{:href => "#"} Bestseller
+        %i.glyphicon.glyphicon-ok-circle
+      
+    .media
+      .media-body
+        %h4.media-heading.lead
+          = product.name
+        %p
+          %strong Price:
+          = product.price
+        %p
+          = product.description
 
-      %p#notice= notice
+    %p#notice= notice
 
-      %p
-        %strong Category:
-        = @product.category_id
+    %p
+      %strong Category:
+      = product.category_id
 
-      %div
-        %button{:type => "button", :class => "btn btn-primary biggie"}
-          %i.glyphicon.glyphicon-transfer
-          Vergleichen
-        %button{:type => "button", :class => "btn btn-primary biggie"} 
-          %i.glyphicon.glyphicon-edit
-          Merken
-        %button{:type => "button", :class => "btn btn-primary biggie"}
-          %i.glyphicon.glyphicon-shopping-cart
-          Warenkorb
-      %br
-      = link_to 'Edit', edit_product_path(@product)
-      = link_to 'Back', products_path
-  %br
-  .list-group.well
-    %a.list-group-item{:href => "#"}
-      %h4.list-group-item-heading List group item heading
-      %p.list-group-item-text UNESCO pursues its objectives through five major programs: education, natural sciences, social/human sciences, culture, and communication/information. Projects sponsored by UNESCO include literacy, technical, and teacher-training programmes; international 
-    %a.list-group-item{:href => "#"}
-      %h4.list-group-item-heading List group item heading
-      %p.list-group-item-text UNESCO pursues its objectives through five major programs: education, natural sciences, social/human sciences, culture, and communication/information. Projects sponsored by UNESCO include literacy, technical, and teacher-training programmes; international science 
-    %a.list-group-item{:href => "#"}
-      %h4.list-group-item-heading List group item heading
-      %p.list-group-item-text UNESCO pursues its objectives through five major programs: education, natural sciences, social/human sciences, culture, and communication/information. Projects sponsored by UNESCO include literacy, technical, and teacher-training programmes; 
-    %a.list-group-item{:href => "#"}
-      %h4.list-group-item-heading List group item heading
-      %p.list-group-item-text UNESCO pursues its objectives through five major programs: education, natural sciences, social/human sciences, culture, and communication/information. 
+    = link_to 'Edit', edit_product_path(product)
+    = link_to 'Back', products_path
 

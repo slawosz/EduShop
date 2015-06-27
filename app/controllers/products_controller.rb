@@ -8,11 +8,11 @@ class ProductsController < ApplicationController
     # params[:category_id] means we picked a category
     if params[:category_id]
       @products = Product.where(category_id: params[:category_id])
-      @presented_products = Product.where(category_id: params[:category_id]).limit(5).map { |p| p.price.to_s } 
+      @presented_products = Product.where(category_id: params[:category_id]).limit(5)
       @page_has_slideshow = Category.find(params[:category_id]).has_slideshow
     else # we are on main products page
-      @products = Product.all
-      @presented_products = Product.limit(5).map { |p| p.price.to_s }
+      @products = Product.all # TODO: display products for index
+      @presented_products = Product.limit(5)
       @page_has_slideshow = true
     end
   end
