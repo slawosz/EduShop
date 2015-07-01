@@ -12,9 +12,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
 
 
-  %body.padding-re
+  %body
 
-    %nav.navbar.navbar-inverse
+    %nav.navbar.navbar-inverse.navbar-fixed-top
       .container-fluid
         .navbar-header
           %button.navbar-toggle.collapsed{"data-toggle" => "collapse", "data-target" => "#bs-example-navbar-collapse-1", :type => "button"}
@@ -70,33 +70,26 @@
                 %li
                   %a{:href => "#"} separated link  
 
-    .container
+    .container#overrides.padding-top
       .row
-        .col-md-12.no-padding.proper-width 
-          %nav.navbar.navbar-default.proper-width          
-            .navbar-header
+        .col-md-12.no-padding
+          %nav.navbar.navbar-default.proper-height.white-background       
+            .navbar-header.proper-width.proper-height
               %button.navbar-toggle.collapsed{:type => "button", "data-toggle" => "collapse", "data-target" => "#bs-example-navbar-collapse-1"}
                 %span.sr-only Toggle navigation
                 %span.icon-bar
                 %span.icon-bar
                 %span.icon-bar
-              %a.navbar-brand{:href => "#"} 
-                %i.glyphicon.glyphicon-grain
-                  Digitec
-
-            .collapse.navbar-collapse#bs-example-navbar-collapse-1
-              %ul.nav.navbar-nav
-                %li.active
-                  %a{:href => "#"}
-                    Link 
-                    %span.sr-only (current)
-                %li
-                  %a{:href => "#"} Link
+              %a.navbar-brand.display-flex{:href => "#"}     
+                = image_tag("logo.png", :alt => "rss feed") 
+                .logo-name 
+                  %p digitec.ch
             
-              %form.navbar-form.navbar-left{:role => "search"}
-                .form-group.rounded
-                  %input.form-control.search-box.rounded{:type => "text", :placeholder => "Search", :size => 70}
-                %button.btn.btn-default{:type => "submit"} Submit  
+              %form.navbar-form.navbar-left.search-box-position{:role => "search"}
+                .form-group.smaller-height
+                  %input.form-control.search-box.rounded.search-box-length{:type => "text", :placeholder => "Search", :size => 70}
+                    %i.glyphicon.glyphicon-search
+                
 
               %ul.nav.navbar-nav.navbar-right
                 %li
