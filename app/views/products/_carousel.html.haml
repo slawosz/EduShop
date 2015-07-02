@@ -5,12 +5,13 @@
       %li{"data-target" => "...", "data-slide-to" => "1"} 
       %li{"data-target" => "...", "data-slide-to" => "2"} 
     .carousel-inner{:role => "listbox"}
-      .item.active
-        %img{:src => "http://www.sl-designs.com/images/free-backgrounds/0smiley10_sl-designs.jpg", :alt => "..."}
-        
-      .item
-        - @presented_products.each do |elem|
-          = render partial: 'product', object: elem
+      - @presented_products.each_with_index do |elem, i|
+        - if i == 0
+          .item.active
+            = render partial: 'product', object: elem
+        - else
+          .item
+            = render partial: 'product', object: elem
   
         
 
