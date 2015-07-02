@@ -5,12 +5,15 @@
       %li{"data-target" => "...", "data-slide-to" => "1"} 
       %li{"data-target" => "...", "data-slide-to" => "2"} 
     .carousel-inner{:role => "listbox"}
-      .item.active
-        %img{:src => "http://www.sl-designs.com/images/free-backgrounds/0smiley10_sl-designs.jpg", :alt => "..."}
-        .carousel-caption jjd
-      .item
-        %img{:src => "http://www.sl-designs.com/images/free-backgrounds/0smiley10_sl-designs.jpg", :alt => "..."}
-        .carousel-caption jdwdk
+      - @presented_products.each_with_index do |elem, i|
+        - if i == 0
+          .item.active
+            = render partial: 'product', object: elem
+        - else
+          .item
+            = render partial: 'product', object: elem
+  
+        
 
     %a.left.carousel-control{:href => "#carousel-example-generic", :role => "button", "data-slide" => "prev"}
       %span.glyphicon.glyphicon-chevron-left{"aria-hidden" => "true"}
