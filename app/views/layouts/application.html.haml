@@ -88,44 +88,46 @@
               %form.navbar-form.navbar-left.search-box-position{:role => "search"}
                 .form-group.smaller-height
                   %input.form-control.search-box.rounded.search-box-length{:type => "text", :placeholder => "Search", :size => 70}
-                    %i.glyphicon.glyphicon-search
+                    %i.glyphicon.glyphicon-search.inside-icon
                 
 
-              %ul.nav.navbar-nav.navbar-right
+              %ul.nav.navbar-nav.navbar-right.icons-navbar
                 %li
-                  %a.border-right
-                    %i.glyphicon.glyphicon-th 
-                    0
+                  %a.border-right.icons-display
+                    %i.glyphicon.glyphicon-th.icon-top-position.custom-color
+                    %p.number-top-position.custom-color.custom-color 0
                 %li
-                  %a.border-right
-                    %i.glyphicon.glyphicon-tag
-                    0
+                  %a.border-right.icons-display
+                    %i.glyphicon.glyphicon-tag.icon-top-position.custom-color
+                    %p.number-top-position.custom-color 0
                 %li
-                  %a.border-right
-                    %i.glyphicon.glyphicon-shopping-cart
-                    0
+                  %a.icons-display
+                    %i.glyphicon.glyphicon-shopping-cart.icon-top-position.custom-color
+                    %p.number-top-position.custom-color 0
 
 
       .row
-        .col-md-2.well.well-sm
-          %ul.nav.nav-pills.nav-stacked
-            %li.active{:role => "presentation"} 
-              %a{:href => "#"} Home
-            %li{:role => "presentation"}
-              %a{:href => "#"} Profile
-            %li{:role => "presentation"}
-              %a{:href => "#"} Product
-            %li{:role => "presentation"}
-              %a{:href => "#"} Product
-            %li{:role => "presentation"}
-              %a{:href => "#"} Product
+        .col-md-2.no-padding
+          %ul.list-group.list-unstyled.left-menu
+            %li
+              %a{:href => "#"} Audio HiFi
+            %li
+              %a{:href => "#"} Drucker und Scanner
+            %li
+              %a{:href => "#"} Fernseher und Video
+            %li
+              %a{:href => "#"} Foto
+            %li
+              %a{:href => "#"} Gaming & Gadgets
+            %li
+              %a{:href => "#"} Fernseher und Video
+            %li
+              %a{:href => "#"} Drucker und Scanner
+            %li
+              %a{:href => "#"} Audio HiFi
           %ul.list-group
-            %li.list-group-item
-              Action
-            %li.list-group-item.disabled
-              Action
-            %li.list-group-item
-              Action
+
+
 
         = yield
 

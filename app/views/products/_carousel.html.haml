@@ -7,10 +7,12 @@
     .carousel-inner{:role => "listbox"}
       .item.active
         %img{:src => "http://www.sl-designs.com/images/free-backgrounds/0smiley10_sl-designs.jpg", :alt => "..."}
-        .carousel-caption jjd
+        
       .item
-        %img{:src => "http://www.sl-designs.com/images/free-backgrounds/0smiley10_sl-designs.jpg", :alt => "..."}
-        .carousel-caption jdwdk
+        - @presented_products.each do |elem|
+          = render partial: 'product', object: elem
+  
+        
 
     %a.left.carousel-control{:href => "#carousel-example-generic", :role => "button", "data-slide" => "prev"}
       %span.glyphicon.glyphicon-chevron-left{"aria-hidden" => "true"}
